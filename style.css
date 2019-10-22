@@ -1,0 +1,163 @@
+*{    /* "*" - относится абсолютно ко всей странице */
+  text-decoration: none;
+  margin: 0;
+  padding: 0;
+ }
+
+html {
+  background:
+  /* url('https://st3.depositphotos.com/1006472/12950/i/450/depositphotos_129501428-stock-photo-rustic-wooden-board-texture-table.jpg') */
+  #51a2b4 center top; /* картинка центрирована и находится вверху*/
+  background-repeat: no-repeat; /*если картинка маленькая заполняет ей всё пространство*/
+}
+#header {color: #b92a04;} /*всё с таким id, как header, будет иметь цвет ...*/
+h1 {color: #178700;}
+
+h3.style {color: #ffed00;}
+p.style {background-color: blue;}
+p i{
+  color:#df7ade;
+}
+p.example, b{ /*Все абзацы "p" с классом "example" и "b"(жирные шрифты) будут иметь следующие параметры*/
+  font-size: 30px;
+  font-weight: normal;
+}
+p#qwerty:first-letter{ /*действия будут проводиться только с первыми буквами абзацев "p" с id="qwerty" */
+  color:#ffc700;
+}
+p#ytrewq:first-line{ /*действия будут проводиться только с первыми строчками абзацев "p" с id="ytrewq" */
+  color:#14ff00;
+}
+.href{
+  color: #3bff00;
+  font-size: 40px;
+  text-decoration: line-through; /* декорация текста подчёркивания, зачеркинвания, none, надчёркивание*/
+}
+.href:hover{ /*hover-действия при наведении*/
+  color: #d300ff;
+}
+.href:active{ /*active-при нажатии*/
+  color: #0500ff;
+}
+
+p:hover{background-color: red;}
+p:active{background-color: #33ff00;}
+
+#textStyles:hover {
+  background-color: #51a2b4;
+}
+p {
+  text-indent:1.1em;
+}
+#textStyles {
+  font-size: 1.1em; /*В "em" мы указываем размер шрифта, так как чаще всего используется*/
+  font-weight: normal; /*толщина текста.в основном указывается normal или bold*/
+  font-family: Comic Sans MS, sans-serif; /*Шрифт(стиль) .... sans-serif(если такого стиля, который мы указали нет на том или ином устройстве, то эта функция подбирает максимально похожий из возможных)*/
+  text-align: justify; /*месторасположение текста на экране. "justify"-автоматически подбирает его под экран*/
+  text-transform: uppercase; /*регистр*/
+  word-spacing: 10px; /*растояние между словами*/
+  line-height: 500%; /*растояние между строками*/
+}
+#textStyles span {
+  letter-spacing: 10px; /*растояние между буквами*/
+}
+#testBlock {
+  border: 3px dotted silver; /*solid-сплошная линия,
+                               dashed-пунктирная,
+                               dotted-точечная,
+                               groove-вдавленная обьёмная линия,
+                               ridge-выпуклая обьёмная обводка
+                               doble-двойная линия,
+                               inset-весь блок вдавленный,
+                               outset-весь блок выдавленный,
+                               сначала в пикселях указывается толщина блока*/
+  min-height: 400px;
+  float: left; /*высоту убал, так как она была большой и блок не помещался в наш article*/
+  width: 500px;
+  background-color: #f7f7f7;
+  font-size: 1.9em;
+  font-family: Comic Sans MS;
+  margin: 20px; /*Внешние отступы*/
+  padding: 10px; /*Внутренние отступы*/
+  border-radius: 15px; /*закругление угов блока*/
+  position: relative;
+  z-index: 0;/*наложение: когда стопка бумаг и наш индекс показывает какой по счёту слой илимет наш блок; 0 по умолчанию*/
+  box-shadow: 10px 10px 200px #007116; /*тени для блока могу быть как снаружи(по умолчанию), так и в нутри(inset пишется вначале)
+                                        цифры: 1ая - ширина, 2ая - высота, 3яя - отвечает за распыление на какое количество пикселей это растянуть, причём, если больше, то цвет тускнеет*/
+}
+
+
+
+#headBlock{
+  width: Calc(100% - 20px); /*Т.к. ниже мы указываем внутренние отступы по 10рх, то страница будет выдавать 120% от её возможностей и получится некрасиво( блок будет 100% и + 20рх справа какого-то говна), поэтому в СSS3 придумали калькулятор*/
+  height: 70px;
+  background-color: #fff;
+  border-bottom: 2px solid silver;
+  padding: 10px;
+  font-size: 1.2em;
+  color: #401014;
+  font-weight: bold;
+  font-family: Comic Sans MS, sans-serif;
+  float: left;  /*позиционирование слева (Это мы делаем для того, чтобы блоки не налазили друг на друга и +++ для выставления блоков не подряд сверху вниз вертикальнокально, а например рядом на одном уровне горизонтально)*/
+}
+
+article, aside{
+  background-color: #f7f7f7;
+  min-height: 600px;
+  border-radius: 10px;
+  overflow: auto;
+  border: 1px solid silver;
+  padding: 10px;
+  box-sizing: border-box;
+  margin-top: 20px;
+  float: left;
+}
+
+article{
+  width:60%;
+  margin-left: 5%;
+  margin-right: 5%;
+  /* display: none; */
+}
+
+aside{
+  width:25%;
+}
+
+aside ul{
+  list-style-position: inside; /*inside - точки для списка находяться в блоке;
+                                 outside - точки для списка находяться за блоком;*/
+  list-style-type: lower-latin;; /*стили я пронумерования списка*/
+  list-style-image: url();/*здесь бы указывались какие-то картинки, которые мы бы хотели использовать в качестве нумерации и тд списка*/
+}
+
+#footerBlock{
+  width: Calc(100% - 20px);
+  height: 70px;
+  background-color: #fff;
+  border-top: 2px solid silver;
+  margin-top: 20px;
+  padding: 10px;
+  font-size: 1.2em;
+  color: #401014;
+  font-weight: bold;
+  font-family: Comic Sans MS, sans-serif;
+  float: left;
+}
+
+.spanBlock {
+  display: block; /* block - из любого элемента создаём блока
+                     none - не отображается, и смещается
+                     inline - в одну линию
+                     list-item - делает любой элемент частью списка*/
+  /*visibility:hidden - в отличие от display:none не смещает всё остальное, а просто как будто стёркой*/
+  height: 100px;
+  width: 100px;
+  float: left;
+  border: 1px solid red;
+  overflow: auto; /*по умолчанию visible, то есть тект показывается;
+              hidden - текст который входит в рамки заданые выше показывается. Остальное нет!!!
+              scroll - блок буде снабжён полосами прокурутки как горизонтально так и вертикально
+              auto - блок буде снабжён только теми полосами прокурутки которые необходимы */
+
+}
